@@ -22,6 +22,7 @@ import com.realjt.meizu.passwordmanager.model.Classification;
 import com.realjt.meizu.passwordmanager.model.Password;
 import com.realjt.meizu.passwordmanager.utils.DateUtils;
 import com.realjt.meizu.passwordmanager.utils.EncryptUtils;
+import com.realjt.meizu.passwordmanager.utils.LogUtils;
 import com.realjt.meizu.passwordmanager.utils.SettingsUtils;
 import com.realjt.meizu.passwordmanager.view.ClassificationPopupView;
 import com.realjt.meizu.passwordmanager.view.PromptDialog;
@@ -96,8 +97,10 @@ public class AddActivity extends BaseActivity implements OnClickListener,
 	 */
 	private void initView()
 	{
-		createTimeText.setText(DateUtils.dateToMinute(password.getCreateTime()));
-		reviseTimeText.setText(DateUtils.dateToMinute(password.getReviseTime()));
+		createTimeText
+				.setText(DateUtils.dateToMinute(password.getCreateTime()));
+		reviseTimeText
+				.setText(DateUtils.dateToMinute(password.getReviseTime()));
 
 		classificationText.setText(password.getClassification()
 				.getDescription());
@@ -316,6 +319,8 @@ public class AddActivity extends BaseActivity implements OnClickListener,
 
 			Intent intent = new Intent(ReturnCode.COMPLETE);
 			setResult(ReturnCode.SUCCESS, intent);
+
+			LogUtils.debug("insert password success");
 
 			super.onBackPressed();
 

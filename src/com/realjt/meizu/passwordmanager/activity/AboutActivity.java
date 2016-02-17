@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.realjt.meizu.passwordmanager.R;
 import com.realjt.meizu.passwordmanager.common.Constants;
+import com.realjt.meizu.passwordmanager.utils.LogUtils;
 import com.realjt.meizu.passwordmanager.view.PromptDialog;
 
 /**
@@ -173,6 +174,8 @@ public class AboutActivity extends BaseActivity implements OnClickListener
 		{
 			startActivity(new Intent("android.intent.action.VIEW",
 					Uri.parse(Constants.APK_IN_STORE_ADDRESS)));
+
+			LogUtils.debug("enter meizu appstore, application exit");
 
 			Intent intent = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
 			intent.putExtra("reason", "switch");
