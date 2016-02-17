@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/blue_actionbar" />
+
+    <TextView
+        android:id="@+id/tv_popup_classification_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_classification"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_popup_classification_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:text="@string/cancel"
+        android:textColor="@color/blue_actionbar"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:layout_marginTop="44dp"
+        android:background="#C8C8C8" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="44.4dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_popup_classification_life"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_detail_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"
+                android:text="@string/classification_life"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_popup_classification_website"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_detail_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"
+                android:text="@string/classification_website"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_popup_classification_bank"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_detail_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"
+                android:text="@string/classification_bank"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_popup_classification_study"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_detail_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"
+                android:text="@string/classification_study"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_popup_classification_game"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_detail_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"
+                android:text="@string/classification_game"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_popup_classification_other"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_detail_item"
+                android:clickable="true"
+                android:gravity="center"
+                android:paddingBottom="18dp"
+                android:paddingTop="18dp"
+                android:text="@string/classification_other"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

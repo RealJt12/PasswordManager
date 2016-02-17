@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="AppTheme" parent="@style/BaseTheme" />
+
+    <style name="ActionBarStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionBar">
+        <item name="android:background">@drawable/bg_actionbar_white</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleTextStyle</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionButton">
+        <item name="android:textColor">@color/blue_actionbar</item>
+        <item name="android:translationX">-2dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true" >
+
+    <TextView
+        android:id="@+id/tv_textedit_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="2dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:layout_below="@id/tv_textedit_count"
+        android:background="#C8C8C8" />
+
+    <EditText
+        android:id="@+id/et_textedit"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@id/tv_textedit_count"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:gravity="top"
+        android:inputType="none"
+        android:padding="6dp"
+        android:textSize="19sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.4dp"
+        android:layout_below="@id/et_textedit"
+        android:background="#C8C8C8" />
+
+    <Button
+        android:id="@+id/bt_textedit_complete"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@id/et_textedit"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_btn_blue"
+        android:text="@string/complete"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+</RelativeLayout>

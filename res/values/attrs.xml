@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="classification">
+        <item>@string/classification_life</item>
+        <item>@string/classification_website</item>
+        <item>@string/classification_bank</item>
+        <item>@string/classification_study</item>
+        <item>@string/classification_game</item>
+        <item>@string/classification_other</item>
+    </string-array>
+
+</resources>

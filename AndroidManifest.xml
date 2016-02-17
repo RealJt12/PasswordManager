@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.realjt.meizu.passwordmanager"
+    android:versionCode="7"
+    android:versionName="2.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="com.realjt.meizu.passwordmanager.PasswordManagerApplication"
+        android:allowBackup="false"
+        android:allowClearUserData="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.LoginActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter
+                android:icon="@drawable/icon"
+                android:label="@string/recovery" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="*"
+                    android:mimeType="*/*"
+                    android:pathPattern=".*\\.pmax"
+                    android:scheme="file" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.HomeActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.AddActivity"
+            android:exported="false"
+            android:label="@string/add"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.DetailActivity"
+            android:exported="false"
+            android:label="@string/detail"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.SearchActivity"
+            android:exported="false"
+            android:label="@string/search"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.RecoveryActivity"
+            android:exported="false"
+            android:label="@string/recovery"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.AboutActivity"
+            android:exported="false"
+            android:label="@string/about"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.SettingsActivity"
+            android:exported="false"
+            android:label="@string/settings"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.TextEditActivity"
+            android:exported="false"
+            android:label="@string/edit"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysVisible" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.ChangePasswordActivity"
+            android:exported="false"
+            android:label="@string/change_password"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.realjt.meizu.passwordmanager.activity.StatisticsActivity"
+            android:exported="false"
+            android:label="@string/statistics"
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

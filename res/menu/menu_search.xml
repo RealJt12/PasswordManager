@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_search_all"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/all"/>
+    <item
+        android:id="@+id/action_search_life"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/classification_life"/>
+    <item
+        android:id="@+id/action_search_website"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/classification_website"/>
+    <item
+        android:id="@+id/action_search_bank"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/classification_bank"/>
+    <item
+        android:id="@+id/action_search_study"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/classification_study"/>
+    <item
+        android:id="@+id/action_search_game"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/classification_game"/>
+    <item
+        android:id="@+id/action_search_other"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/classification_other"/>
+
+</menu>

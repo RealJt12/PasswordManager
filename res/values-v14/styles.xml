@@ -1,0 +1,10 @@
+<resources>
+
+    <style name="AppTheme" parent="@style/BaseTheme" />
+
+    <style name="ActionBarStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionBar">
+        <item name="android:background">@drawable/bg_actionbar_bottom_blue</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleTextStyle</item>
+    </style>
+
+</resources>

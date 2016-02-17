@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_recovery_display_hidden"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/display_hidden_file"/>
+
+    <!--
+    <group android:id="@+id/menu_group_open_file" >
+        <item
+            android:id="@+id/action_recovery_back_root"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom"
+            android:title="@string/back_root"/>
+    </group>
+    <group android:id="@+id/menu_group_select_path" >
+        <item
+            android:id="@+id/action_recovery_use_path"
+            android:orderInCategory="100"
+            android:showAsAction="ifRoom"
+            android:title="@string/use_path"/>
+    </group>
+    -->
+
+</menu>

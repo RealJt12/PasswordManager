@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="activity_login_top_padding">198dp</dimen>
+    <dimen name="activity_text_edit_hight">180dp</dimen>
+
+</resources>

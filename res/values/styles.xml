@@ -1,0 +1,46 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="@style/BaseTheme" />
+
+    <style name="BaseTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="android:actionBarStyle">@style/ActionBarStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/ActionOverflowButtonStyle</item>
+        <item name="android:actionButtonStyle">@style/ActionButtonStyle</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="ActionOverflowButtonStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_sb_more</item>
+        <item name="android:minWidth">60dp</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:scaleX">1.06</item>
+        <item name="android:scaleY">1.06</item>
+        <item name="android:translationX">-2dp</item>
+    </style>
+
+    <style name="ActionButtonStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionButton">
+        <item name="android:textColor">@color/blue_actionbar</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="@android:style/Widget.DeviceDefault.Light.ActionBar">
+        <item name="android:background">@drawable/bg_actionbar_white</item>
+        <item name="android:titleTextStyle">@style/ActionBarTitleTextStyle</item>
+    </style>
+
+    <style name="ActionBarTitleTextStyle" parent="@android:style/TextAppearance.DeviceDefault.Widget.ActionBar.Title">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">@color/blue_actionbar</item>
+    </style>
+
+    <style name="DialogTheme" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="PopupButtomStyle" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/popup_bottom_in</item>
+        <item name="@android:windowExitAnimation">@anim/popup_bottom_out</item>
+    </style>
+
+</resources>

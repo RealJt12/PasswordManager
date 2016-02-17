@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="grey">#F0F0F0</color>
+    <color name="light_green">#2DB5E5</color>
+    <color name="blue_actionbar">#32A5E7</color>
+    <color name="tomato_actionbar">#F56313</color>
+    <color name="green_actionbar">#43B56B</color>
+    <color name="coral_actionbar">#EEA313</color>
+
+</resources>
