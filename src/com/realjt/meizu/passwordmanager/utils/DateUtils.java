@@ -28,7 +28,12 @@ public class DateUtils
 	private static final SimpleDateFormat SIMPLE_DATE_FORMAT_MINUTE = new SimpleDateFormat(
 			"yyyy年MM月dd日HH时mm分", Locale.getDefault());
 
+	private static final SimpleDateFormat SIMPLE_FORMAT_MINUTE = new SimpleDateFormat(
+			"HH时mm分ss秒", Locale.getDefault());
+
 	public static final long TEN_MINUTES = 600000;
+
+	public static final long TWO_MINUTES = 120000;
 
 	public static final long A_DAY = 86400000;
 
@@ -109,6 +114,11 @@ public class DateUtils
 	public static synchronized String dateToMinute(Date date)
 	{
 		return SIMPLE_DATE_FORMAT_MINUTE.format(date);
+	}
+
+	public static synchronized String dateToLoginLimitTime(Date date)
+	{
+		return SIMPLE_FORMAT_MINUTE.format(date);
 	}
 
 }

@@ -48,8 +48,16 @@ public class Constants
 	 */
 	public static final String LOGIN_PASSWORD_REGULAR = "[a-z0-9~!@#$%^&:.,;/'<>-_=]*";
 
+	/**
+	 * 密码正则表达式预编译
+	 */
 	public static final Pattern LOGIN_PASSWORD_PATTERN = Pattern.compile(
 			LOGIN_PASSWORD_REGULAR, Pattern.CASE_INSENSITIVE);
+
+	/**
+	 * 登录3次失败后则进行登录限制
+	 */
+	public static final int LOGIN_ALLOW_FAIL_TIMES = 3;
 
 	public interface ReturnCode
 	{

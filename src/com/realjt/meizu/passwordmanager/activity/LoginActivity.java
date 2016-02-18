@@ -1,6 +1,7 @@
 package com.realjt.meizu.passwordmanager.activity;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import android.app.AlertDialog;
 import android.content.ComponentName;
@@ -34,6 +35,7 @@ import com.realjt.meizu.passwordmanager.common.CommonUtils;
 import com.realjt.meizu.passwordmanager.common.Constants;
 import com.realjt.meizu.passwordmanager.task.LoginTask;
 import com.realjt.meizu.passwordmanager.task.LoginTask.LoginListener;
+import com.realjt.meizu.passwordmanager.utils.DateUtils;
 import com.realjt.meizu.passwordmanager.utils.LogUtils;
 import com.realjt.meizu.passwordmanager.utils.SettingsUtils;
 import com.realjt.meizu.passwordmanager.view.ProgressDialog;
@@ -154,7 +156,10 @@ public class LoginActivity extends BaseActivity implements OnClickListener,
 			showUseExplain();
 		}
 
-		loginPromptText.setText(SettingsUtils.getLoginPrompt());
+		if (checkLoginLimitTime())
+		{
+			loginPromptText.setText(SettingsUtils.getLoginPrompt());
+		}
 
 		loginButton.setOnClickListener(this);
 		inputEditText.addTextChangedListener(textWatcher);
@@ -407,7 +412,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,
 					&& null == SettingsUtils.getLoginPassword())
 			{
 				firstLogin(inputText);
-			} else
+			} else if (checkLoginLimitTime())
 			{
 				showProgressDialog(getString(R.string.verificating));
 
@@ -426,6 +431,10 @@ public class LoginActivity extends BaseActivity implements OnClickListener,
 						overridePendingTransition(R.anim.zoom_in_enter,
 								R.anim.zoom_in_exit);
 
+						// 登录成功后设置登录失败次数和登录时间限制
+						SettingsUtils.setLoginFailedTimes(0);
+						SettingsUtils.setLoginLimitTime(0);
+
 						LogUtils.debug("login success, enter home activity");
 
 						LoginActivity.this.finish();
@@ -439,6 +448,30 @@ public class LoginActivity extends BaseActivity implements OnClickListener,
 						loginPromptText.setText(R.string.wrong_password);
 						loginPromptText.setTextColor(getResources().getColor(
 								android.R.color.holo_red_light));
+
+						// 登录失败后纪录次数与登录限制时间
+						int loginFailedTimes = SettingsUtils
+								.getLoginFailedTimes();
+						if (loginFailedTimes < Constants.LOGIN_ALLOW_FAIL_TIMES)
+						{
+							loginFailedTimes++;
+						}
+						SettingsUtils.setLoginFailedTimes(loginFailedTimes);
+
+						if (Constants.LOGIN_ALLOW_FAIL_TIMES == loginFailedTimes)
+						{
+							long loginLimitTime = new Date().getTime()
+									+ DateUtils.TWO_MINUTES;
+							SettingsUtils.setLoginLimitTime(loginLimitTime);
+
+							String str = DateUtils
+									.dateToLoginLimitTime(new Date(
+											loginLimitTime));
+
+							loginPromptText.setText("请在" + str + "后重试");
+							loginPromptText.setTextColor(getResources()
+									.getColor(android.R.color.holo_red_light));
+						}
 
 						LogUtils.error("login failed, password error");
 					}
@@ -455,7 +488,33 @@ public class LoginActivity extends BaseActivity implements OnClickListener,
 
 			LogUtils.error("password input illegal");
 		}
+	}
 
+	/**
+	 * 检查当前时间是否允许登录
+	 * 
+	 * @return
+	 */
+	private boolean checkLoginLimitTime()
+	{
+		if (Constants.LOGIN_ALLOW_FAIL_TIMES <= SettingsUtils
+				.getLoginFailedTimes())
+		{
+			long loginLimitTime = SettingsUtils.getLoginLimitTime();
+			if (new Date().getTime() < loginLimitTime)
+			{
+				String str = DateUtils.dateToLoginLimitTime(new Date(
+						loginLimitTime));
+
+				loginPromptText.setText("请在" + str + "后重试");
+				loginPromptText.setTextColor(getResources().getColor(
+						android.R.color.holo_red_light));
+
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	/**

@@ -220,6 +220,38 @@ public class SettingsUtils
 				.commit();
 	}
 
+	/**
+	 * 登录失败次数
+	 * 
+	 * @return
+	 */
+	public static int getLoginFailedTimes()
+	{
+		return sharedPreferences.getInt("login_failed_times", 0);
+	}
+
+	public static void setLoginFailedTimes(int failedTimes)
+	{
+		sharedPreferences.edit().putInt("login_failed_times", failedTimes)
+				.commit();
+	}
+
+	/**
+	 * 登录失败3次后，在此时间后才可以再次尝试登录
+	 * 
+	 * @return
+	 */
+	public static long getLoginLimitTime()
+	{
+		return sharedPreferences.getLong("login_limit_time", 0);
+	}
+
+	public static void setLoginLimitTime(long limitTime)
+	{
+		sharedPreferences.edit().putLong("login_limit_time", limitTime)
+				.commit();
+	}
+
 	public static void setDisplayHiddenFile(boolean displayHiddenFile)
 	{
 		sharedPreferences.edit()

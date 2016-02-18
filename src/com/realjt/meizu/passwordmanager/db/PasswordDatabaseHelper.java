@@ -16,6 +16,7 @@ import com.realjt.meizu.passwordmanager.model.Classification;
 import com.realjt.meizu.passwordmanager.model.Password;
 import com.realjt.meizu.passwordmanager.utils.DateUtils;
 import com.realjt.meizu.passwordmanager.utils.EncryptUtils;
+import com.realjt.meizu.passwordmanager.utils.LogUtils;
 
 /**
  * 数据库助手类,使用单例模式,其中表Passwords的键为createtime
@@ -190,7 +191,13 @@ public class PasswordDatabaseHelper extends SQLiteOpenHelper
 	 */
 	public void deleteAllPassword()
 	{
-		dataBase.delete(TABLE_NAME, null, null);
+		if (null != Constants.LOGIN_PASSWORD)
+		{
+			dataBase.delete(TABLE_NAME, null, null);
+		} else
+		{
+			LogUtils.error("user not login, not allow delete all date");
+		}
 	}
 
 	/**
