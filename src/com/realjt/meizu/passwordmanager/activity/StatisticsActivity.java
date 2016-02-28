@@ -130,8 +130,8 @@ public class StatisticsActivity extends BaseActivity implements
 		switch (view.getId())
 		{
 		case R.id.bt_statistics_clear_all_data:
-			promptDialog = new PromptDialog(this, 0, "确定删除全部数据?", "此操作不可恢复!",
-					R.string.sure, R.string.cancel);
+			promptDialog = new PromptDialog(this, 0, getString(R.string.warn),
+					"确定删除全部密码数据 ？", R.string.sure, R.string.cancel);
 			promptDialog.setPromptDialogOnClickListener(this);
 			promptDialog.show();
 			break;

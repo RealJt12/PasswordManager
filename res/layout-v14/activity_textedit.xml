@@ -23,7 +23,7 @@
     <EditText
         android:id="@+id/et_textedit"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="@dimen/activity_text_edit_hight"
         android:layout_below="@id/tv_textedit_count"
         android:layout_marginTop="1dp"
         android:background="@android:color/white"

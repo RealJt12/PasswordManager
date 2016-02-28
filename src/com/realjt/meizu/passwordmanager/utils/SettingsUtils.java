@@ -59,6 +59,11 @@ public class SettingsUtils
 		sharedPreferences.edit().putBoolean("first_login", firstLogin).commit();
 	}
 
+	public static void deleteFirstLogin()
+	{
+		sharedPreferences.edit().remove("first_login").commit();
+	}
+
 	/**
 	 * 加密设置登录密码
 	 * 
@@ -85,6 +90,15 @@ public class SettingsUtils
 	public static String getLoginPassword()
 	{
 		return sharedPreferences.getString("login_password", null);
+	}
+
+	public static void deleteLoginPassword()
+	{
+		if (null != Constants.LOGIN_PASSWORD
+				&& !"".equals(Constants.LOGIN_PASSWORD))
+		{
+			sharedPreferences.edit().remove("login_password").commit();
+		}
 	}
 
 	/**
@@ -124,6 +138,16 @@ public class SettingsUtils
 	{
 		return sharedPreferences.getString("login_prompt", context
 				.getResources().getString(R.string.password_prompt));
+	}
+
+	public static void deleteLoginPrompt()
+	{
+		sharedPreferences.edit().remove("login_prompt").commit();
+	}
+
+	public static void deleteAllData()
+	{
+		sharedPreferences.edit().clear().commit();
 	}
 
 	/**

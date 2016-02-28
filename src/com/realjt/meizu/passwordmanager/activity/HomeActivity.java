@@ -184,7 +184,7 @@ public class HomeActivity extends BaseActivity implements OnClickListener,
 		listView3.setAdapter(listAdapter3);
 		listView3.setTag(3);
 
-		new LoadDataTask().execute("all");
+		new LoadDataTask().execute();
 
 		listView0.setOnItemClickListener(this);
 		listView0.setOnItemLongClickListener(this);
@@ -300,8 +300,6 @@ public class HomeActivity extends BaseActivity implements OnClickListener,
 	{
 		super.onActivityResult(requestCode, resultCode, intent);
 
-		isItemClickable = false;
-
 		new LoadDataTask().execute();
 	}
 
@@ -360,6 +358,8 @@ public class HomeActivity extends BaseActivity implements OnClickListener,
 			{
 				showProgressDialog("数据加载中...");
 			}
+
+			isItemClickable = false;
 		}
 
 		@Override
@@ -367,15 +367,22 @@ public class HomeActivity extends BaseActivity implements OnClickListener,
 		{
 			listAdapter0.setPasswordList(databaseHelper
 					.queryAllSimplePassword());
-			listAdapter1.setPasswordList(databaseHelper
-					.querySimplePasswordByClassification(Classification.LIFE
-							.getClassification()));
-			listAdapter2.setPasswordList(databaseHelper
-					.querySimplePasswordByClassification(Classification.WEBSITE
-							.getClassification()));
-			listAdapter3.setPasswordList(databaseHelper
-					.querySimplePasswordByClassification(Classification.BANK
-							.getClassification()));
+
+			if (!firstLoading)
+			{
+				listAdapter1
+						.setPasswordList(databaseHelper
+								.querySimplePasswordByClassification(Classification.LIFE
+										.getClassification()));
+				listAdapter2
+						.setPasswordList(databaseHelper
+								.querySimplePasswordByClassification(Classification.WEBSITE
+										.getClassification()));
+				listAdapter3
+						.setPasswordList(databaseHelper
+								.querySimplePasswordByClassification(Classification.BANK
+										.getClassification()));
+			}
 
 			return null;
 		}
@@ -387,15 +394,20 @@ public class HomeActivity extends BaseActivity implements OnClickListener,
 
 			listAdapter0.notifyDataSetChanged();
 
-			progressDialog.dismiss();
+			if (firstLoading)
+			{
+				progressDialog.dismiss();
 
-			listAdapter1.notifyDataSetChanged();
-			listAdapter2.notifyDataSetChanged();
-			listAdapter3.notifyDataSetChanged();
+				firstLoading = false;
+				new LoadDataTask().execute();
+			} else
+			{
+				listAdapter1.notifyDataSetChanged();
+				listAdapter2.notifyDataSetChanged();
+				listAdapter3.notifyDataSetChanged();
+			}
 
 			isItemClickable = true;
-
-			firstLoading = false;
 		}
 
 	}
@@ -503,7 +515,15 @@ public class HomeActivity extends BaseActivity implements OnClickListener,
 	{
 		super.onBackPressed();
 
-		// databaseHelper.close();
+		Constants.LOGIN_PASSWORD = null;
+	}
+
+	@Override
+	protected void onDestroy()
+	{
+		super.onDestroy();
+
+		Constants.LOGIN_PASSWORD = null;
 	}
 
 	@Override

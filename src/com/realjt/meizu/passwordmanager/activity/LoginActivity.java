@@ -403,7 +403,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,
 	 */
 	private void login()
 	{
-		LogUtils.debug("click login button, start login");
+		LogUtils.debug("click login button, start login validate");
 
 		String inputText = inputEditText.getText().toString();
 		if (inputText.length() >= 6 && inputText.length() <= 16)

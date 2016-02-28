@@ -191,7 +191,8 @@ public class PasswordDatabaseHelper extends SQLiteOpenHelper
 	 */
 	public void deleteAllPassword()
 	{
-		if (null != Constants.LOGIN_PASSWORD)
+		if (null != Constants.LOGIN_PASSWORD
+				&& !"".equals(Constants.LOGIN_PASSWORD))
 		{
 			dataBase.delete(TABLE_NAME, null, null);
 		} else

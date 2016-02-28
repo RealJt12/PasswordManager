@@ -175,6 +175,9 @@ public class AboutActivity extends BaseActivity implements OnClickListener
 			startActivity(new Intent("android.intent.action.VIEW",
 					Uri.parse(Constants.APK_IN_STORE_ADDRESS)));
 
+			overridePendingTransition(R.anim.push_right_in,
+					R.anim.push_left_out);
+
 			LogUtils.debug("enter meizu appstore, application exit");
 
 			Intent intent = new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);

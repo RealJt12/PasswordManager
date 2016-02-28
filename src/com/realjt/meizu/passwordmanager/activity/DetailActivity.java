@@ -162,7 +162,7 @@ public class DetailActivity extends BaseActivity implements OnClickListener,
 	 */
 	private void send()
 	{
-		promptDialog = new PromptDialog(this, 2, getString(R.string.send),
+		promptDialog = new PromptDialog(this, 2, getString(R.string.warn),
 				"账号密码泄露风险！", R.string.keep_on, R.string.cancel);
 		promptDialog.setPromptDialogOnClickListener(this);
 		promptDialog.show();

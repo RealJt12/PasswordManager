@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.meizu.flyme.reflect.StatusBarProxy;
+import com.realjt.meizu.passwordmanager.common.Constants;
 import com.realjt.meizu.passwordmanager.utils.LogUtils;
 import com.realjt.meizu.passwordmanager.utils.SettingsUtils;
 
@@ -54,6 +55,8 @@ public class BaseActivity extends Activity
 					if (SettingsUtils.isExitPressHomeKey())
 					{
 						// onDestroy中进行unregisterReceiver
+						Constants.LOGIN_PASSWORD = null;
+
 						BaseActivity.this.finish();
 					}
 				}

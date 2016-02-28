@@ -88,5 +88,12 @@
     <string name="help">帮助</string>
     <string name="display_hidden_file">显示隐藏文件</string>
     <string name="select_classification">选择分类</string>
+    <string name="warn">警告</string>
+    <string name="clear_data">清除数据</string>
+    <string name="clear_data_tip">为防止密码数据被恶意清除，此处清除数据需要登录密码。</string>
+    <string name="login_password_clear">登录密码数据</string>
+    <string name="password_data">账号密码数据</string>
+    <string name="explain">说明</string>
+    <string name="clear_data_retain_password">保留登录密码</string>
 
 </resources>
